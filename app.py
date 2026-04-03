@@ -1,6 +1,7 @@
 from flask import Flask, request
 import joblib
 from flask_cors import CORS
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -10,8 +11,8 @@ CORS(app)
 modelo = joblib.load('modelo.pkl')
 
 @app.route('/')
-def home():
-    return "API está funcionando!"
+def pagina():
+    return render_template('index.html')
 
 @app.route('/prever', methods=['POST'])
 def prever():
