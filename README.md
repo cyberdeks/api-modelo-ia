@@ -61,4 +61,5 @@ python app.py
 
 👨‍💻 Autor
 Werner Krause Soares
+
 Projeto desenvolvido como parte dos estudos em Engenharia de IA.
