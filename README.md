@@ -2,6 +2,8 @@
 
 Este projeto é uma aplicação completa de Machine Learning com interface web, capaz de realizar previsões com base em dados de entrada fornecidos pelo usuário.
 
+Disponível em: https://api-modelo-ia-sbw0.onrender.com/
+
 ![Screenshot do sistema](screenshot.jpg)
 
 ---
