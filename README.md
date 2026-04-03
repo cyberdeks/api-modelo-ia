@@ -59,7 +59,7 @@ python app.py
 
 4. Abra o arquivo index.html no navegador
 
-👨‍💻 Autor
+👨‍💻 Autor:
 Werner Krause Soares
 
 Projeto desenvolvido como parte dos estudos em Engenharia de IA.
