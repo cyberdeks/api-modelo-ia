@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    h1, h3 {
+        margin: 15px auto;
+        text-align: center;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial;
+    }
+    .container{
+        text-align: center;
+        width: 300px;
+    }
+    input {
+        width: 30%;
+        padding: 10px;
+        margin: 1px auto;
+        display: block;
+        box-sizing: border-box;
+    }
+    button {
+        width: 50%;
+        padding: 10px;
+        margin: 1px auto;
+        display: block;
+        cursor: pointer;
+    }
+    </style>
+    <title>Minha IA</title>
+</head>
+<body>
+    <div class=""container">
+
+        <h1>Previsão com Inteligência Artificial</h1>
+        <h3>Baseado em dados do arquivo "dados_modelo.xlsx, o modelo fará uma previsão:</h3>
+        <h3>1 para "Compra" e 0 para "Não Compra"</h3>
+
+        <!-- Campo de idade -->
+        <input type="number" id="idade" placeholder="Digite sua idade">
+
+        <br><br>
+
+        <!-- Campo de salário -->
+        <input type="number" id="salario" placeholder="Digite seu salário">
+
+        <br><br>
+
+        <!-- Botão -->
+        <button onclick="enviar()">Prever</button>
+
+    </div>
+    <script>
+
+        function enviar() {
+
+            // Pegando os valores digitados
+            let idade = document.getElementById("idade").value;
+            let salario = document.getElementById("salario").value;
+
+            // Enviando para a API Flask
+            fetch("http://127.0.0.1:5000/prever", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    idade: Number(idade),
+                    salario: Number(salario)
+                })
+            })
+
+            // Convertendo resposta
+            .then(res => res.json())
+
+            // Mostrando resultado
+            .then(data => {
+                alert("Previsão: " + data.previsao);
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
